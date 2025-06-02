@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TrivAI – YourDailyPuzzle</title>
+  <!-- Link to the same CSS file used on the homepage -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-light-gray text-base text-dark-font">
+  <!-- ====== Header / Navigation ====== -->
+  <header class="navbar">
+    <div class="container flex items-center justify-between py-4">
+      <a href="index.html" class="logo flex items-center">
+        <img src="logo.svg" alt="YourDailyPuzzle Logo" class="h-8 w-auto" />
+        <span class="ml-2 font-semibold text-xl">YourDailyPuzzle</span>
+      </a>
+      <nav class="nav-links space-x-6">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="trivai.html" class="nav-link active">TrivAI</a>
+        <a href="escape.html" class="nav-link">Escape Room</a>
+        <a href="puzzles.html" class="nav-link">Puzzles</a>
+        <a href="spot-ai.html" class="nav-link">Spot the AI</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== Main Content ====== -->
+  <main class="container py-12">
+    <!-- Page Title -->
+    <h1 class="text-4xl font-bold mb-8">TrivAI</h1>
+
+    <!-- ====== Daily Multiple Choice Quiz Section ====== -->
+    <section class="card mb-12">
+      <div class="section-header flex items-center mb-4">
+        <img src="icon-daily.svg" alt="Daily Quiz Icon" class="h-6 w-6 mr-2" />
+        <h2 class="text-2xl font-semibold">Daily Quiz</h2>
+      </div>
+      <p class="mb-6">
+        Every day at midnight (ET), a fresh set of 10 multiple-choice questions
+        goes live. Think of it like bar trivia—covering sports, pop culture, world
+        geography, history, and more. Rack up points each day, track your streak,
+        and see how you stack up on the leaderboard.
+      </p>
+      <button class="btn-primary">
+        Start Today's Quiz
+      </button>
+    </section>
+
+    <!-- ====== Custom Category Quiz Section ====== -->
+    <section class="card">
+      <div class="section-header flex items-center mb-4">
+        <img src="icon-custom.svg" alt="Custom Quiz Icon" class="h-6 w-6 mr-2" />
+        <h2 class="text-2xl font-semibold">Custom Category Quiz</h2>
+      </div>
+      <p class="mb-6">
+        Can’t wait for tomorrow’s questions? Type in any category you like—“World
+        Geography,” “1990s Hip-Hop,” “Oscar-Winning Movies,” or whatever comes to
+        mind. We’ll generate a brand-new set of 10 questions on the spot.
+      </p>
+      <form id="custom-quiz-form" class="flex flex-col sm:flex-row items-start sm:items-center">
+        <input
+          type="text"
+          id="quiz-category"
+          name="category"
+          placeholder="e.g. World Geography"
+          class="input-text flex-1 mb-4 sm:mb-0 sm:mr-4"
+          required
+        />
+        <button type="submit" class="btn-primary">
+          Generate Quiz
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ====== Footer ====== -->
+  <footer class="footer py-8">
+    <div class="container text-center text-sm text-gray-600">
+      © 2025 YourDailyPuzzle. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ====== Scripts ====== -->
+  <script>
+    // Example script stub for handling the custom quiz form
+    document
+      .getElementById('custom-quiz-form')
+      .addEventListener('submit', function (e) {
+        e.preventDefault();
+        const category = document.getElementById('quiz-category').value.trim();
+        if (category) {
+          // Replace this with actual routing or AJAX call to generate questions
+          window.location.href = `quiz.html?type=custom&category=${encodeURIComponent(
+            category
+          )}`;
+        }
+      });
+  </script>
+</body>
+</html>
